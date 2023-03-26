@@ -1,0 +1,9 @@
+[Unit]
+Type=simple
+Description=my-script shell
+
+[Service]
+ExecStart=/bin/bash /data/starting.sh
+
+[Install]
+WantedBy=multi-user.target

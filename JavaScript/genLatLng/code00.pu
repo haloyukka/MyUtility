@@ -1,0 +1,23 @@
+@startuml
+title シーケンス図
+User -> HTML:onload
+HTML -> JS: init()
+JS -> google.maps.LatLng: LatLng()
+JS <-- google.maps.LatLng
+JS -> JS: opt設定
+JS -> google.maps: Map()
+JS <-- google.maps
+JS -> google.maps.event:event()
+google.maps.event -> google.maps.event:addListener()
+JS <-- google.maps.event
+
+User ->> HTML:button click
+HTML -> JS:mylistener()
+JS -> google.maps.LatLng:lat() 緯度（横）
+JS <-- google.maps.LatLng
+HTML <-- JS: innterHTMLへ
+JS -> google.maps.LatLng:lng() 経度（縦）
+JS <-- google.maps.LatLng
+HTML <-- JS: innterHTMLへ
+
+@enduml
